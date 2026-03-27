@@ -1,0 +1,391 @@
+/* =================================================
+ROOT VARIABLES
+================================================ */
+
+:root{
+  --primary:#6366f1;
+  --primary-light:#818cf8;
+
+  --text-main:#0f172a;
+  --text-muted:#64748b;
+
+  --bg-page:#f8fafc;
+  --bg-card:#ffffff;
+
+  --border:#e2e8f0;
+
+  --shadow-sm:0 2px 6px rgba(0,0,0,0.04);
+  --shadow-md:0 12px 28px rgba(0,0,0,0.08);
+
+  --radius-lg:18px;
+  --radius-md:14px;
+}
+
+
+/* =================================================
+PAGE
+================================================ */
+
+.workspace-explorer-page{
+  max-width:1600px;
+  margin:auto;
+  padding:40px 44px;
+  background:var(--bg-page);
+}
+
+
+/* =================================================
+HEADER
+================================================ */
+
+.workspace-explorer-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:36px;
+}
+
+.header-content h1{
+  font-size:30px;
+  font-weight:700;
+  margin-bottom:4px;
+  color:var(--text-main);
+}
+
+.header-description{
+  font-size:14px;
+  color:var(--text-muted);
+}
+
+
+/* =================================================
+BUTTON
+================================================ */
+
+.btn{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 18px;
+  border-radius:10px;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);
+  color:white;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(99,102,241,0.3);
+}
+
+
+/* =================================================
+FILTER
+================================================ */
+
+.workspace-controls{
+  margin-bottom:28px;
+}
+
+.filter-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.filter-btn{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 16px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:white;
+  font-size:13px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.filter-btn:hover{
+  border-color:var(--primary);
+}
+
+.filter-btn.active{
+  background:var(--primary);
+  color:white;
+  border-color:var(--primary);
+}
+
+
+/* =================================================
+SECTION CARD
+================================================ */
+
+.workspace-section{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:28px;
+  margin-bottom:36px;
+  box-shadow:var(--shadow-sm);
+}
+
+
+/* =================================================
+SECTION HEADER
+================================================ */
+
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:22px;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--text-main);
+}
+
+.section-count{
+  font-size:12px;
+  background:#f1f5f9;
+  padding:4px 12px;
+  border-radius:20px;
+  color:var(--text-muted);
+}
+
+
+/* =================================================
+GRID (4 CARDS PER ROW)
+================================================ */
+
+.workspace-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:24px;
+}
+
+
+/* =================================================
+WORKSPACE CARD
+================================================ */
+
+.workspace-card{
+  background:var(--bg-card);
+  border:2px solid var(--border);
+  border-radius:var(--radius-md);
+  padding:22px;
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  position:relative;
+  cursor:pointer;
+  transition:all .25s ease;
+  min-height:150px;
+}
+
+
+/* top gradient accent */
+
+.workspace-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  height:6px;
+  width:100%;
+  border-radius:var(--radius-md) var(--radius-md) 0 0;
+  background:linear-gradient(90deg,#6366f1,#8b5cf6,#06b6d4);
+}
+
+
+/* hover */
+
+.workspace-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--primary);
+  box-shadow:var(--shadow-md);
+}
+
+
+/* =================================================
+ICON
+================================================ */
+
+.workspace-icon{
+  width:54px;
+  height:54px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(99,102,241,0.25);
+  background:linear-gradient(
+    135deg,
+    rgba(99,102,241,0.18),
+    rgba(139,92,246,0.05)
+  );
+  flex-shrink:0;
+}
+
+
+/* =================================================
+CONTENT
+================================================ */
+
+.workspace-content{
+  flex:1;
+}
+
+.workspace-title-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.workspace-name{
+  font-size:17px;
+  font-weight:600;
+  color:var(--text-main);
+}
+
+.workspace-desc{
+  font-size:13px;
+  color:var(--text-muted);
+  margin:6px 0 14px;
+  line-height:1.4;
+}
+
+
+/* =================================================
+META STATS
+================================================ */
+
+.workspace-meta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.meta-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  background:#f1f5f9;
+  border:1px solid #e2e8f0;
+  padding:6px 12px;
+  border-radius:12px;
+  color:#334155;
+}
+
+
+/* =================================================
+ACTIONS
+================================================ */
+
+.workspace-actions{
+  position:absolute;
+  right:16px;
+  top:18px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.workspace-actions svg{
+  color:#94a3b8;
+}
+
+.workspace-actions svg:hover{
+  color:var(--primary);
+}
+
+
+/* =================================================
+DELETE BUTTON
+================================================ */
+
+.delete-workspace-btn{
+  border:none;
+  background:none;
+  cursor:pointer;
+  padding:6px;
+  border-radius:8px;
+  color:#ef4444;
+}
+
+.delete-workspace-btn:hover{
+  background:#fee2e2;
+}
+
+
+/* =================================================
+LOADING
+================================================ */
+
+.workspace-explorer-loading{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  height:300px;
+}
+
+.loading-spinner{
+  width:36px;
+  height:36px;
+  border:4px solid #e5e7eb;
+  border-top:4px solid var(--primary);
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  margin-bottom:12px;
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
+
+
+/* =================================================
+RESPONSIVE
+================================================ */
+
+@media(max-width:1200px){
+
+  .workspace-grid{
+    grid-template-columns:repeat(3, 1fr);
+  }
+
+}
+
+@media(max-width:900px){
+
+  .workspace-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+}
+
+@media(max-width:600px){
+
+  .workspace-grid{
+    grid-template-columns:1fr;
+  }
+
+  .workspace-explorer-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+  }
+
+}

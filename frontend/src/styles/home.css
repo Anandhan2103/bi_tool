@@ -1,0 +1,321 @@
+/* =================================================
+PAGE
+================================================= */
+
+.home-page{
+  max-width:1400px;
+  margin:auto;
+  padding:36px 32px;
+}
+
+/* =================================================
+HEADER
+================================================= */
+
+.home-header{
+  margin-bottom:30px;
+}
+
+.home-header h1{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.home-header p{
+  font-size:14px;
+  color:var(--text-secondary);
+}
+
+
+/* =================================================
+STATS GRID
+================================================= */
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-bottom:32px;
+}
+
+
+/* =================================================
+STAT CARD
+================================================= */
+
+.stat-card{
+
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  padding:20px;
+
+  background:white;
+  border-radius:14px;
+
+  border:1px solid var(--color-border);
+
+  box-shadow:var(--shadow-sm);
+
+  transition:all .2s ease;
+}
+
+.stat-card:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:var(--shadow-md);
+
+}
+
+.stat-card svg{
+
+  background:rgba(0,128,255,0.12);
+
+  color:var(--color-accent);
+
+  width:42px;
+  height:42px;
+
+  padding:8px;
+
+  border-radius:10px;
+
+}
+
+.stat-card h3{
+
+  font-size:22px;
+
+  font-weight:700;
+
+}
+
+.stat-card p{
+
+  font-size:13px;
+
+  color:var(--text-secondary);
+
+}
+
+
+/* =================================================
+ACTION GRID
+================================================= */
+
+.action-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+  gap:20px;
+
+  margin-bottom:40px;
+
+}
+
+
+/* =================================================
+ACTION CARD
+================================================= */
+
+.action-card{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:16px;
+
+  padding:20px;
+
+  border-radius:14px;
+
+  background:white;
+
+  border:1px solid var(--color-border);
+
+  text-decoration:none;
+
+  color:inherit;
+
+  transition:all .25s ease;
+
+}
+
+.action-card:hover{
+
+  border-color:var(--color-accent);
+
+  box-shadow:var(--shadow-md);
+
+  transform:translateY(-3px);
+
+}
+
+.action-card svg{
+
+  width:42px;
+
+  height:42px;
+
+  padding:9px;
+
+  border-radius:10px;
+
+  background:rgba(0,128,255,0.12);
+
+  color:var(--color-accent);
+
+}
+
+.action-card h3{
+
+  font-size:16px;
+
+  font-weight:600;
+
+  margin-bottom:2px;
+
+}
+
+.action-card p{
+
+  font-size:13px;
+
+  color:var(--text-secondary);
+
+}
+
+
+/* =================================================
+RECENT SECTION
+================================================= */
+
+.recent-section{
+
+  background:white;
+
+  border:1px solid var(--color-border);
+
+  border-radius:16px;
+
+  padding:24px;
+
+  box-shadow:var(--shadow-sm);
+
+}
+
+.recent-section h2{
+
+  font-size:20px;
+
+  font-weight:600;
+
+  margin-bottom:20px;
+
+}
+
+
+/* =================================================
+RECENT GRID
+================================================= */
+
+.recent-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+
+  gap:16px;
+
+}
+
+
+/* =================================================
+WORKSPACE CARD
+================================================= */
+
+.workspace-card{
+
+  background:#fafafa;
+
+  border-radius:12px;
+
+  border:1px solid var(--color-border);
+
+  padding:16px;
+
+  text-decoration:none;
+
+  color:inherit;
+
+  transition:all .2s ease;
+
+}
+
+.workspace-card:hover{
+
+  background:white;
+
+  border-color:var(--color-accent);
+
+  transform:translateY(-2px);
+
+  box-shadow:var(--shadow-sm);
+
+}
+
+.workspace-card h4{
+
+  font-size:14px;
+
+  font-weight:600;
+
+  margin-bottom:4px;
+
+}
+
+.workspace-card p{
+
+  font-size:12px;
+
+  color:var(--text-secondary);
+
+}
+
+
+/* =================================================
+EMPTY STATE
+================================================= */
+
+.empty-state{
+
+  grid-column:1/-1;
+
+  text-align:center;
+
+  padding:30px;
+
+  font-size:14px;
+
+  color:var(--text-secondary);
+
+}
+
+
+/* =================================================
+RESPONSIVE
+================================================= */
+
+@media(max-width:900px){
+
+  .home-page{
+    padding:28px 20px;
+  }
+
+}

@@ -1,0 +1,1145 @@
+/* =====================================================
+   VISUAL BUILDER – ENTERPRISE SaaS VERSION
+===================================================== */
+
+.vb-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  background: var(--bg-main);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Container and Layout */
+.vb-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f7fa;
+}
+
+
+
+/* Container */
+.vb-container {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: #f8fafc;
+  height: 100vh;
+}
+
+.vb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* LEFT */
+.vb-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.btn-back-modern {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid #3b82f6;
+  border-radius: 50px;
+  background: white;
+  color: #3b82f6;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.vb-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* CENTER */
+.vb-header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.workspace-selector-header {
+  position: relative;
+  width: 280px;
+}
+
+.header-select {
+  width: 100%;
+  appearance: none;
+  padding: 8px 16px;
+  border: 1px solid #3b82f6;
+  border-radius: 10px;
+  background-color: #f0f7ff;
+  font-size: 13px;
+  color: #1e293b;
+  outline: none;
+  cursor: pointer;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #3b82f6;
+  pointer-events: none;
+}
+
+/* RIGHT SECTION (STACKED) */
+.vb-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex: 1.5;
+}
+
+/* Input Box Styling */
+.report-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  background: #ffffff;
+  width: 260px;
+}
+
+.report-name-input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  width: 100%;
+  color: #475569;
+}
+
+/* ACTIONS BAR (Equal height items) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Fixed height variable for all buttons/toggle */
+:root {
+  --action-height: 34px;
+}
+
+.mode-switch, .btn-action, .btn-save-modern, .btn-export-modern {
+  height: var(--action-height);
+  box-sizing: border-box;
+}
+
+/* Toggle Switch */
+.mode-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  background: #f8fafc;
+}
+
+.mode-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: #94a3b8;
+}
+
+.mode-label.active { color: #3b82f6; }
+
+.switch {
+  position: relative;
+  width: 34px;
+  height: 18px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #cbd5e0;
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px; width: 14px;
+  left: 2px; bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+input:checked + .slider { background-color: #3b82f6; }
+input:checked + .slider:before { transform: translateX(16px); }
+
+/* Buttons Style */
+.history-actions-modern {
+  display: flex;
+  gap: 4px;
+}
+
+.btn-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: white;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-save-modern {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 18px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 102, 255, 0.2);
+}
+
+.btn-export-modern {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  background: white;
+  font-weight: 600;
+  font-size: 12px;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+/* Dropdown */
+.export-wrapper { position: relative; }
+.export-modern-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  width: 140px;
+  z-index: 50;
+}
+
+.export-modern-dropdown button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.export-modern-dropdown button:hover { background: #f1f5f9; color: #3b82f6; }
+
+/* Main Content Styles */
+.vb-main-content {
+  padding: 24px;
+}
+
+.chart-library-bar {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.chart-library-bar small {
+  color: #3b82f6;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* =========================================
+   COMPACT CHART LIBRARY (PRODUCTION FIX)
+========================================= */
+
+.chart-library-section{
+  background:#ffffff;
+  border-radius:14px;
+  padding:18px 20px;
+  border:1px solid #e5e7eb;
+  margin-bottom:16px;
+}
+
+/* header layout */
+.section-header{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:14px;
+  width:100%;
+  margin-bottom:18px;
+}
+
+/* title */
+.section-label{
+  font-size:12px;
+  font-weight:600;
+  color:#64748b;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+/* divider line */
+.section-divider{
+  height:1px;
+  background:#e5e7eb;
+  width:100%;
+}
+
+/* action button */
+.text-btn{
+  background:none;
+  border:none;
+  color:#2563eb;
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+  padding:4px 10px;
+  border-radius:6px;
+  transition:all .2s ease;
+  white-space:nowrap;
+}
+
+.text-btn:hover{
+  background:#eff6ff;
+}
+
+/* chart grid */
+.chart-type-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:18px;
+}
+
+/* chart cards */
+.chart-type-item{
+  border:1px solid #e5e7eb;
+  background:#ffffff;
+  padding:20px;
+  border-radius:16px;
+  cursor:pointer;
+  transition:all 0.2s ease;
+  text-align:center;
+  min-height:110px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.chart-type-item:hover{
+  border-color:#2563eb;
+  transform:translateY(-3px);
+  box-shadow:0 10px 24px rgba(37,99,235,0.15);
+}
+
+.chart-type-item.active{
+  background:rgba(37,99,235,0.1);
+  border-color:#2563eb;
+  box-shadow:0 8px 20px rgba(37,99,235,0.1);
+}
+
+.chart-icon-placeholder{
+  margin-bottom:10px;
+  color:#475569;
+}
+
+.chart-type-item.active .chart-icon-placeholder{
+  color:#2563eb;
+}
+
+.chart-label{
+  font-size:14px;
+  font-weight:500;
+  color:#1e293b;
+}
+
+
+/* =========================================
+   DATA FIELDS ROW LAYOUT
+========================================= */
+
+/* =========================================
+   DATA FIELDS ROW LAYOUT
+========================================= */
+
+.vb-row.data-fields-row{
+  display:grid;
+  grid-template-columns:320px 1fr 1fr;
+  gap:18px;
+  width:100%;
+  margin-bottom:20px;
+  align-items:start;
+
+  position:relative;
+  z-index:20;
+}
+
+
+.data-source-card .card-body{
+  justify-content:space-between;
+}
+
+/* =========================================
+   CARD BASE
+========================================= */
+
+.vb-card{
+  background:#ffffff;
+  border-radius:14px;
+  border:1px solid #e5e7eb;
+  padding:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.02);
+
+  display:flex;
+  flex-direction:column;
+
+  height:100%; /* important */
+}
+
+/* DATA SOURCE CARD */
+
+.data-source-card{
+  position:relative;
+  min-width:320px;
+}
+
+/* DIMENSIONS / MEASURES */
+
+.fields-card{
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+
+.card-title{
+  font-size:13px;
+  font-weight:700;
+  color:#64748b;
+  letter-spacing:.5px;
+}
+
+.badge{
+  background:#f1f5f9;
+  padding:2px 8px;
+  border-radius:20px;
+  font-size:11px;
+  color:#475569;
+}
+
+
+/* =========================================
+   CARD BODY
+========================================= */
+
+.card-body{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+
+/* =========================================
+   SCROLLABLE FIELD LIST
+========================================= */
+
+.scrollable{
+  max-height:220px;
+  overflow-y:auto;
+  padding-right:4px;
+}
+
+
+/* Scrollbar */
+
+.scrollable::-webkit-scrollbar{
+  width:4px;
+}
+
+.scrollable::-webkit-scrollbar-track{
+  background:#f1f5f9;
+}
+
+.scrollable::-webkit-scrollbar-thumb{
+  background:#cbd5e1;
+  border-radius:4px;
+}
+
+
+/* =========================================
+   FIELD SUB-CARD STYLE
+========================================= */
+
+.vb-field{
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:8px;
+
+  padding:10px 12px;
+  margin-bottom:8px;
+
+  font-size:13px;
+  color:#1e293b;
+
+  cursor:grab;
+  transition:all .2s ease;
+}
+
+
+/* Hover */
+
+.vb-field:hover{
+  background:#eff6ff;
+  border-color:#3b82f6;
+  transform:translateY(-1px);
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+
+/* Drag state */
+
+.vb-field:active{
+  cursor:grabbing;
+  transform:scale(.98);
+}
+
+
+/* Dimension indicator */
+
+.vb-field.dimension{
+  border-left:4px solid #3b82f6;
+}
+
+
+/* Measure indicator */
+
+.vb-field.measure{
+  border-left:4px solid #10b981;
+}
+
+
+/* =========================================
+   DATA INFO GRID
+========================================= */
+
+.data-info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.info-item{
+  display:flex;
+  flex-direction:column;
+}
+
+.info-label{
+  font-size:11px;
+  color:#64748b;
+}
+
+.info-value{
+  font-size:13px;
+  font-weight:500;
+  color:#1e293b;
+}
+
+
+/* =========================================
+   DATASET PICKER
+========================================= */
+
+.dataset-picker-container{
+  width:100%;
+  position:relative;
+}
+
+.dataset-dropdown-container{
+  position:relative;
+  width:100%;
+}
+
+
+/* selector */
+
+.dataset-selector{
+  background:#ffffff;
+  border:1px solid #3b82f6;
+  border-radius:8px;
+  padding:10px 14px;
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+}
+
+
+/* dropdown */
+
+.dataset-dropdown-panel{
+  position:absolute;
+  top:calc(100% + 6px);
+  left:0;
+  width:100%;
+
+  background:#ffffff;
+  border:1px solid #e2e8f0;
+  border-radius:10px;
+
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+
+  max-height:260px;
+  overflow-y:auto;
+
+  z-index:9999;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-hint{
+  text-align:center;
+  font-size:12px;
+  color:#94a3b8;
+  padding:20px 0;
+}
+/* =========================================
+   DATASET DROPDOWN PANEL
+========================================= */
+
+.dataset-dropdown-panel{
+  position:absolute;
+  top:calc(100% + 6px);
+  left:0;
+  width:100%;
+
+  background:#ffffff;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+
+  box-shadow:0 18px 40px rgba(0,0,0,0.12);
+
+  max-height:300px;
+  overflow-y:auto;
+
+  z-index:9999;
+}
+
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+.dataset-search{
+  padding:12px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.dataset-search input{
+  width:100%;
+  padding:9px 12px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  font-size:13px;
+  outline:none;
+}
+
+.dataset-search input:focus{
+  border-color:#3b82f6;
+  box-shadow:0 0 0 2px rgba(59,130,246,0.1);
+}
+
+
+/* =========================================
+   DATASET LIST
+========================================= */
+
+.dataset-list{
+  max-height:240px;
+  overflow-y:auto;
+}
+
+
+/* dataset row */
+
+.dataset-item{
+  padding:10px 14px;
+  cursor:pointer;
+  border-bottom:1px solid #f1f5f9;
+
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+
+  transition:all .15s ease;
+}
+
+
+/* remove last border */
+
+.dataset-item:last-child{
+  border-bottom:none;
+}
+
+
+/* hover */
+
+.dataset-item:hover{
+  background:#f8fafc;
+}
+
+
+/* active selected dataset */
+
+.dataset-item.active{
+  background:linear-gradient(
+    to right,
+    rgba(59,130,246,0.12),
+    rgba(59,130,246,0.04)
+  );
+  border-left:3px solid #3b82f6;
+}
+
+
+/* dataset name */
+
+.dataset-item-name{
+  font-size:13px;
+  font-weight:500;
+  color:#1e293b;
+}
+
+
+/* dataset row count */
+
+.dataset-item-stats{
+  font-size:11px;
+  color:#64748b;
+}
+/* =====================================================
+   HORIZONTAL ENCODING LAYOUT
+===================================================== */
+
+.encoding-section{
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  margin-bottom:18px;
+
+  position:relative;
+  z-index:1; /* keep it below dropdown */
+}
+
+/* Make them horizontal */
+.encoding-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1.2fr 0.8fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Card look */
+.encoding-zone-wrapper {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px;
+  transition: all 0.2s ease;
+}
+
+.encoding-zone-wrapper:hover {
+  border-color: #2563eb;
+  box-shadow: 0 6px 16px rgba(37,99,235,0.08);
+}
+
+.encoding-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* Drop zone */
+.drop-zone {
+  min-height: 48px;
+  border: 2px dashed #dbeafe;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+padding-left: 12px;
+  font-size: 13px;
+  position: relative;
+  transition: all 0.2s ease;
+  padding: 10px;
+  color: #64748b;
+}
+
+.drop-zone.drop-hover {
+  border-color: #2563eb;
+  background: rgba(37,99,235,0.08);
+  transform: scale(1.02);
+}
+
+.drop-zone.drop-ready {
+  border-color: #2563eb;
+  background: rgba(37,99,235,0.04);
+}
+
+.drop-zone.has-value {
+  border-style: solid;
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.drop-hint {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 10px;
+  color: #2563eb;
+  font-weight: 500;
+  animation: fadeInUp 0.2s ease;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+/* Aggregation card */
+.encoding-controls {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.inline-select {
+  width: 100%;
+  padding: 8px 30px 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 13px;
+  background: #ffffff;
+  appearance: none;
+  cursor: pointer;
+}
+
+.inline-select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.1);
+}
+
+.select-wrapper .select-arrow {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  pointer-events: none;
+  color: #64748b;
+}
+
+/* ===============================
+   CANVAS SECTION
+================================ */
+
+.canvas-section{
+  flex:1;
+  display:flex;
+}
+
+
+/* ===============================
+   CANVAS CARD
+================================ */
+
+.canvas-card{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+
+/* ===============================
+   CANVAS BODY
+================================ */
+
+.canvas-body{
+  flex:1;
+  min-height:420px;
+
+  display:flex;
+  flex-direction:column;
+
+  padding:24px;
+}
+
+
+/* ===============================
+   CHART CONTAINER
+================================ */
+
+.chart-preview-container{
+  width:100%;
+  height:100%;
+  min-height:420px;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.chart-preview-container > *{
+  flex:1;
+}
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================================================
+   UTILITIES
+===================================================== */
+
+.vb-container input:disabled,
+.vb-container select:disabled,
+.vb-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Smooth mode transition animation */
+.mode-switch, .vb-card, .encoding-zone-wrapper {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  .encoding-grid {
+    grid-template-columns: 1fr 1fr 1fr 180px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .vb-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .encoding-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .encoding-controls {
+    grid-column: span 2;
+  }
+}
+.chart-type-item {
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+/* =========================================
+   MODERN UNDO / REDO BUTTONS
+========================================= */
+
+.history-actions-modern {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-action {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+/* Secondary style */
+.btn-secondary {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #2563eb;
+  color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37,99,235,0.15);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   PREMIUM GLOSSY CARD EFFECT
+===================================================== */
+
+.glossy-card {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.95) 0%,
+    rgba(248,250,252,0.95) 100%
+  );
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow:
+    0 8px 24px rgba(15,23,42,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  transition: all 0.25s ease;
+}
+
+.glossy-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,0)
+  );
+  pointer-events: none;
+}
+
+.glossy-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 40px rgba(44, 89, 203, 0.74),
+    inset 0 1px 0 rgb(252, 126, 1);
+}

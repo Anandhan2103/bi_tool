@@ -1,0 +1,454 @@
+/* Container styling */
+.db-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  gap: 20px;
+  font-family: 'Inter', sans-serif; /* Recommended font */
+}
+
+/* LEFT SECTION */
+.vb-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1; /* Allows center to stay centered */
+}
+
+.btn-back-modern {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #0066ff;
+  border-radius: 50px;
+  background: white;
+  color: #0066ff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vb-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* CENTER SECTION - The Workspace Dropdown */
+.vb-header-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.workspace-selector-header {
+  position: relative;
+  min-width: 280px;
+}
+
+.header-select {
+  width: 100%;
+  appearance: none;
+  padding: 10px 16px;
+  border: 1px solid #0066ff;
+  border-radius: 12px;
+  background-color: #f8faff;
+  font-size: 14px;
+  color: #2d3748;
+  cursor: pointer;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0066ff;
+  pointer-events: none;
+}
+
+/* RIGHT SECTION */
+.vb-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  flex: 1;
+}
+
+/* Dashboard Name Input Card */
+.report-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border: 1px solid #0066ff;
+  border-radius: 12px;
+  background: #fcfdff;
+  width: 320px;
+}
+
+.report-name-input {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  outline: none;
+}
+
+/* Actions Group */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Toggle Switch Styling */
+.mode-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border: 1px solid #0066ff;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.mode-label {
+  font-size: 12px;
+  color: #718096;
+}
+
+.mode-label.active {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #cbd5e0;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; width: 16px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #0056d2; }
+input:checked + .slider:before { transform: translateX(22px); }
+
+/* Buttons */
+.btn-action {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  color: #a0aec0; /* Matches your disabled look */
+  cursor: pointer;
+}
+
+.btn-save-modern {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: linear-gradient(180deg, #3182ce 0%, #2b6cb0 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(44, 108, 176, 0.2);
+  cursor: pointer;
+}
+
+.btn-export-modern {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  background: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   1. DASHBOARD FILTER BAR
+   ========================================= */
+.dashboard-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: #f8faff;
+  border-bottom: 1px solid #e2e8f0;
+  gap: 16px;
+}
+
+.filter-bar-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex: 1;
+}
+
+/* Individual Filter Dropdowns */
+.filter-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-select {
+  padding: 6px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  background: white;
+  font-size: 13px;
+  min-width: 120px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.filter-select:focus {
+  border-color: #0066ff;
+}
+
+.filter-remove-btn {
+  margin-left: -10px;
+  z-index: 2;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   2. SIDEBAR & REPORT CARDS
+   ========================================= */
+.builder-main {
+  display: flex;
+  height: calc(100vh - 140px); /* Adjust based on header height */
+  background: #f4f7fa;
+}
+
+.reports-sidebar {
+  width: 280px;
+  background: white;
+  border-right: 1px solid #e2e8f0;
+  padding: 16px;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+
+.reports-sidebar.collapsed { width: 0; padding: 0; overflow: hidden; border: none; }
+
+.report-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.report-card:hover {
+  border-color: #0066ff;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.report-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.report-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  color: #2d3748;
+}
+
+.report-description {
+  font-size: 11px;
+  color: #718096;
+  margin: 2px 0 0 0;
+}
+
+/* =========================================
+   3. CANVAS & GRID WIDGETS
+   ========================================= */
+.builder-canvas {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* The Dashboard Widget Card */
+.widget-container {
+  background: white;
+  border-radius: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.widget-container:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.widget-header {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f2f5;
+  background: #ffffff;
+  cursor: move; /* Indicates drag handle */
+}
+
+.widget-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.widget-remove-btn {
+  background: transparent;
+  border: none;
+  color: #a0aec0;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.widget-remove-btn:hover {
+  color: #e53e3e;
+  background: #fff5f5;
+}
+
+.widget-content {
+  flex: 1;
+  padding: 16px;
+  position: relative;
+  min-height: 0; /* Important for flex-grow to work inside Grid */
+}
+
+/* Empty State Styling */
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  color: #718096;
+}
+
+.empty-state-icon {
+  margin-bottom: 16px;
+  color: #cbd5e0;
+}
+
+.btn-primary {
+  margin-top: 16px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.export-wrapper{
+  position:relative;
+}
+
+.export-dropdown{
+  position:absolute;
+  top:42px;
+  right:0;
+
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:8px;
+
+  box-shadow:0 10px 20px rgba(0,0,0,0.08);
+
+  display:flex;
+  flex-direction:column;
+  min-width:160px;
+
+  z-index:100;
+}
+
+.export-dropdown button{
+  padding:10px 14px;
+  border:none;
+  background:white;
+  text-align:left;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.export-dropdown button:hover{
+  background:#f3f4f6;
+}
